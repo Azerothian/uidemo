@@ -1,0 +1,38 @@
+﻿[{
+	Control: "app/controls/controllistitem",
+	Name: "textBox",
+	TagName: "a",
+	Class: "list-group-item control",
+	Attributes: { 
+		href: "javascript:;" 
+	},
+	Html: "<span class='glyphicon glyphicon-text-width'></span> TextBox",
+	Content: "<input type='text' class='control' />",
+	IsDroppable: false
+},
+{
+	Control: "app/controls/controllistitem",
+	Name: "bsRow",
+	TagName: "a",
+	Class: "list-group-item control",
+	Attributes: { 
+		href: "javascript:;" 
+	},
+	Html: "<span class='glyphicon glyphicon-text-width'></span> Bootstrap Row",
+	Content: "<div class='row control'></div>",
+	IsDroppable: true
+},
+{
+	Control: "app/controls/controllistitem",
+	Name: "bsCol6",
+	TagName: "a",
+	Class: "list-group-item control",
+	Attributes: { 
+		href: "javascript:;" 
+	},
+	Html: "<span class='glyphicon glyphicon-text-width'></span> Bootstrap 6 Column",
+	Content: "<div class='col-xs-6 control'></div>",
+	IsDroppable: true
+}
+
+]

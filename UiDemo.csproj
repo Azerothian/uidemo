@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89FF6999-9E18-41E7-9DB3-5F483B90DB96}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UiDemo</RootNamespace>
+    <AssemblyName>UiDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\loading.css" />
+    <Content Include="iframe.html" />
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="index.html" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-af.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ar-DZ.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ar.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-az.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-be.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-bg.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-bs.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ca.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-cs.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-cy-GB.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-da.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-de.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-el.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-en-AU.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-en-GB.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-en-NZ.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-eo.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-es.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-et.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-eu.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-fa.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-fi.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-fo.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-fr-CA.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-fr-CH.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-fr.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-gl.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-he.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-hi.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-hr.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-hu.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-hy.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-id.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-is.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-it-CH.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-it.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ja.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ka.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-kk.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-km.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ko.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ky.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-lb.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-lt.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-lv.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-mk.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ml.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ms.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-nb.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-nl-BE.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-nl.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-nn.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-no.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-pl.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-pt-BR.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-pt.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-rm.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ro.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ru.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-sk.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-sl.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-sq.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-sr-SR.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-sr.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-sv.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-ta.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-th.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-tj.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-tr.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-uk.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-vi.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-zh-HK.js" />
+    <Content Include="lib\jquery-ui\ui\i18n\jquery.ui.datepicker-zh-TW.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.accordion.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.autocomplete.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.button.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.core.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.datepicker.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.dialog.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.draggable.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.droppable.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-blind.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-bounce.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-clip.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-drop.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-explode.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-fade.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-fold.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-highlight.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-puff.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-pulsate.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-scale.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-shake.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-size.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-slide.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect-transfer.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.effect.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.menu.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.mouse.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.position.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.progressbar.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.resizable.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.selectable.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.selectmenu.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.slider.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.sortable.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.spinner.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.tabs.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.tooltip.js" />
+    <Content Include="lib\jquery-ui\ui\jquery.ui.widget.js" />
+    <Content Include="lib\jsui\.gitignore" />
+    <Content Include="src\app.coffee" />
+    <Content Include="src\controls\pageeditor.coffee" />
+    <Content Include="lib\jsui\bower.json" />
+    <Content Include="lib\jsui\Gruntfile.coffee" />
+    <Content Include="lib\jsui\LICENSE" />
+    <Content Include="lib\jsui\package.json" />
+    <Content Include="lib\jsui\projectz.cson" />
+    <Content Include="lib\jsui\README.md" />
+    <Content Include="lib\jsui\.bowerrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\jsui\src\Control.coffee" />
+    <Content Include="lib\jsui\src\Controls\html.coffee" />
+    <Content Include="lib\jsui\src\jsui.coffee" />
+    <Content Include="lib\jsui\src\Model.coffee" />
+    <Content Include="lib\jsui\src\lib\Promises.coffee" />
+    <Content Include="lib\jsui\src\Util.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\bootstrap\less\alerts.less" />
+    <Content Include="lib\bootstrap\less\badges.less" />
+    <Content Include="lib\bootstrap\less\bootstrap.less" />
+    <Content Include="lib\bootstrap\less\breadcrumbs.less" />
+    <Content Include="lib\bootstrap\less\button-groups.less" />
+    <Content Include="lib\bootstrap\less\buttons.less" />
+    <Content Include="lib\bootstrap\less\carousel.less" />
+    <Content Include="lib\bootstrap\less\close.less" />
+    <Content Include="lib\bootstrap\less\code.less" />
+    <Content Include="lib\bootstrap\less\component-animations.less" />
+    <Content Include="lib\bootstrap\less\dropdowns.less" />
+    <Content Include="lib\bootstrap\less\forms.less" />
+    <Content Include="lib\bootstrap\less\glyphicons.less" />
+    <Content Include="lib\bootstrap\less\grid.less" />
+    <Content Include="lib\bootstrap\less\input-groups.less" />
+    <Content Include="lib\bootstrap\less\jumbotron.less" />
+    <Content Include="lib\bootstrap\less\labels.less" />
+    <Content Include="lib\bootstrap\less\list-group.less" />
+    <Content Include="lib\bootstrap\less\media.less" />
+    <Content Include="lib\bootstrap\less\mixins.less" />
+    <Content Include="lib\bootstrap\less\modals.less" />
+    <Content Include="lib\bootstrap\less\navbar.less" />
+    <Content Include="lib\bootstrap\less\navs.less" />
+    <Content Include="lib\bootstrap\less\normalize.less" />
+    <Content Include="lib\bootstrap\less\pager.less" />
+    <Content Include="lib\bootstrap\less\pagination.less" />
+    <Content Include="lib\bootstrap\less\panels.less" />
+    <Content Include="lib\bootstrap\less\popovers.less" />
+    <Content Include="lib\bootstrap\less\print.less" />
+    <Content Include="lib\bootstrap\less\progress-bars.less" />
+    <Content Include="lib\bootstrap\less\responsive-utilities.less" />
+    <Content Include="lib\bootstrap\less\scaffolding.less" />
+    <Content Include="lib\bootstrap\less\tables.less" />
+    <Content Include="lib\bootstrap\less\theme.less" />
+    <Content Include="lib\bootstrap\less\thumbnails.less" />
+    <Content Include="lib\bootstrap\less\tooltip.less" />
+    <Content Include="lib\bootstrap\less\type.less" />
+    <Content Include="lib\bootstrap\less\utilities.less" />
+    <Content Include="lib\bootstrap\less\variables.less" />
+    <Content Include="lib\bootstrap\less\wells.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Gruntfile.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="projectz.cson" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\empty.js" />
+    <Content Include="src\json\mainscreen.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\controls\dock.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\jsui\src\Controls\template.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\controls\menu.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\controls\controldisplay.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\json\controllist.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\controls\controllistitem.coffee" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\jquery-ui\ui\.jshintrc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59688</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59688/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

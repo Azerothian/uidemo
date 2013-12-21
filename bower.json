@@ -1,0 +1,17 @@
+{
+  "name": "jsui",
+  "version": "0.1.0",
+  "main": "/app/app.js",
+  "ignore": [],
+  "dependencies": {
+		"bluebird": "0.11.5-0",
+		"bootstrap": "*",
+    "jquery": "*",
+    "jquery-ui": "*",
+    "requirejs": "*",
+    "requirejs-text": "*",
+    "require-css": "*",
+		"json5": "*",
+		"eventEmitter": "*"
+	}
+}

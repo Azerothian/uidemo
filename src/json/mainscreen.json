@@ -1,0 +1,4 @@
+﻿{
+  Control: "app/Controls/Dock",
+	Class: "container"
+}
