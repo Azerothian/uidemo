@@ -44,6 +44,7 @@
               return iframeContents.find('[nodes-placeholder]').droppable({
                 iframeFix: true,
                 iframe: iframeElement,
+                greedy: true,
                 drop: function(event, ui) {
                   return ondrop(this, event, ui);
                 }
@@ -70,6 +71,7 @@
           return $(target).find('.control').droppable({
             iframeFix: true,
             iframe: this.iframeElement,
+            greedy: true,
             drop: function(event, ui) {
               return ondrop(this, event, ui);
             }
