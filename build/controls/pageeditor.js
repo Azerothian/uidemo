@@ -10,12 +10,16 @@
 
       function PageEditor() {
         this.OnWindowResize = __bind(this.OnWindowResize, this);
+        this.BindDroppable = __bind(this.BindDroppable, this);
         this.OnDropItem = __bind(this.OnDropItem, this);
+        this.OnOutItem = __bind(this.OnOutItem, this);
+        this.OnOverItem = __bind(this.OnOverItem, this);
         this.SetIframeSettings = __bind(this.SetIframeSettings, this);
         this.OnRender = __bind(this.OnRender, this);
         this.OnInit = __bind(this.OnInit, this);
         PageEditor.__super__.constructor.apply(this, arguments);
         this.elements = Util.jsonToObject("[{        Name: 'framePageEditor',        TagName: 'iframe',        Attributes: { src: '/iframe.html', frameBorder: '0' }      }]");
+        this.ele_ondrop = [];
       }
 
       PageEditor.prototype.OnInit = function() {
@@ -32,23 +36,15 @@
         var _this = this;
         return new Promise(function(resolve, reject) {
           return PageEditor.__super__.OnRender.call(_this).then(function() {
-            var ondrop, setIframe;
+            var self;
             _this.OnWindowResize();
-            ondrop = _this.OnDropItem;
-            setIframe = _this.SetIframeSettings;
+            self = _this;
             $(_this.framePageEditor.el).load(function() {
               var iframeContents, iframeElement;
               iframeElement = this;
               iframeContents = $(iframeElement).contents();
-              setIframe(iframeElement, iframeContents);
-              return iframeContents.find('[nodes-placeholder]').droppable({
-                iframeFix: true,
-                iframe: iframeElement,
-                greedy: true,
-                drop: function(event, ui) {
-                  return ondrop(this, event, ui);
-                }
-              });
+              self.SetIframeSettings(iframeElement, iframeContents);
+              return self.BindDroppable(iframeContents.find('[nodes-placeholder]'));
             });
             return resolve();
           }, reject);
@@ -60,23 +56,42 @@
         this.iframeContents = iframeContents;
       };
 
+      PageEditor.prototype.OnOverItem = function(target, event, ui) {
+        return console.log("ON over", arguments);
+      };
+
+      PageEditor.prototype.OnOutItem = function(target, event, ui) {
+        return console.log("ON out", arguments);
+      };
+
       PageEditor.prototype.OnDropItem = function(target, event, ui) {
-        var content, droppedControl, ondrop;
+        var content, droppedControl;
         console.log("ON DROP", ui.data.options.data);
         droppedControl = ui.data.options.data;
         content = $(droppedControl.model.get('Content'));
         $(target).append(content);
         if (droppedControl.model.get('IsDroppable')) {
-          ondrop = this.OnDropItem;
-          return $(target).find('.control').droppable({
-            iframeFix: true,
-            iframe: this.iframeElement,
-            greedy: true,
-            drop: function(event, ui) {
-              return ondrop(this, event, ui);
-            }
-          });
+          return this.BindDroppable($(target).find('.control'));
         }
+      };
+
+      PageEditor.prototype.BindDroppable = function(target) {
+        var self;
+        self = this;
+        return $(target).droppable({
+          iframeFix: true,
+          iframe: this.iframeElement,
+          greedy: true,
+          drop: function(event, ui) {
+            return self.OnDropItem(this, event, ui);
+          },
+          over: function(event, ui) {
+            return self.OnOverItem(this, event, ui);
+          },
+          out: function(event, ui) {
+            return self.OnOutItem(this, event, ui);
+          }
+        });
       };
 
       PageEditor.prototype.OnWindowResize = function() {
