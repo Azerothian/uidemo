@@ -1,14 +1,14 @@
 {
   "name": "bluebird",
   "homepage": "https://github.com/petkaantonov/bluebird",
-  "version": "0.11.5-0",
-  "_release": "0.11.5-0",
+  "version": "0.11.6-1",
+  "_release": "0.11.6-1",
   "_resolution": {
     "type": "version",
-    "tag": "v0.11.5-0",
-    "commit": "e9209f0c54e3781495bf1d0dd2645c4574d8556b"
+    "tag": "v0.11.6-1",
+    "commit": "1e1c55f65268e8cbff4da4f236e22f97c26bfd50"
   },
   "_source": "git://github.com/petkaantonov/bluebird.git",
-  "_target": "0.11.5-0",
+  "_target": "0.11.6-1",
   "_originalSource": "bluebird"
 }

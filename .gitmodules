@@ -1,6 +1,8 @@
 [submodule "lib/jquery-ui"]
 	path = lib/jquery-ui
 	url = https://github.com/Azerothian/jquery-ui.git
+	branch = DroppableIframeFix
 [submodule "lib/jsui"]
 	path = lib/jsui
 	url = https://github.com/Azerothian/jsui.git
+	branch = coffeescript

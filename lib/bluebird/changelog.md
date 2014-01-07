@@ -1,3 +1,41 @@
+## 0.11.6-0 (2013-12-29)
+
+Features:
+
+ - You may now return promises and thenables from the filterer function used in `Promise.filter` and `Promise.prototype.filter`.
+
+ - `.error()` now catches additional sources of rejections:
+
+    - Rejections originating from `Promise.reject`
+
+    - Rejections originating from thenables using
+    the `reject` callback
+
+    - Rejections originating from promisified callbacks
+    which use the `errback` argument
+
+    - Rejections originating from `new Promise` constructor
+    where the `reject` callback is called explicitly
+
+    - Rejections originating from `PromiseResolver` where
+    `.reject()` method is called explicitly
+
+Bugfixes:
+
+ - Fix `captureStackTrace` being called when it was `null`
+ - Fix `Promise.map` not unwrapping thenables
+
+## 0.11.5-1 (2013-12-15)
+
+## 0.11.5-0 (2013-12-03)
+
+Features:
+
+ - Improve performance of collection methods
+ - Improve performance of promise chains
+
+## 0.11.4-1 (2013-12-02)
+
 ## 0.11.4-0 (2013-12-02)
 
 Bugfixes:
