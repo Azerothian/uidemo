@@ -45,11 +45,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"></i></a></h2>
-      <p class="stat">73.50</p>
+      <p class="stat">75.03</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h2>
-      <p class="stat">95</p>
+      <p class="stat">83</p>
     </div>
   </div>
   <div class="row historical">
@@ -63,11 +63,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty"></i></a></h2>
-      <p class="stat">23.42</p>
+      <p class="stat">22.03</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs"></i></a></h2>
-      <p class="stat">1.15</p>
+      <p class="stat">1.01</p>
     </div>
   </div>
 </div>
@@ -102,8 +102,8 @@
 
       function PageEditor() {
         this.OnWindowResize = __bind(this.OnWindowResize, this);
+        this.BindDroppable = __bind(this.BindDroppable, this);
         this.OnDropItem = __bind(this.OnDropItem, this);
-        this.SetIframeSettings = __bind(this.SetIframeSettings, this);
         this.OnRender = __bind(this.OnRender, this);
         this.OnInit = __bind(this.OnInit, this);
         PageEditor.__super__.constructor.apply(this, arguments);
@@ -124,54 +124,42 @@
         var _this = this;
         return new Promise(function(resolve, reject) {
           return PageEditor.__super__.OnRender.call(_this).then(function() {
-            var ondrop, setIframe;
+            var self;
             _this.OnWindowResize();
-            ondrop = _this.OnDropItem;
-            setIframe = _this.SetIframeSettings;
+            self = _this;
             $(_this.framePageEditor.el).load(function() {
-              var iframeContents, iframeElement;
-              iframeElement = this;
-              iframeContents = $(iframeElement).contents();
-              setIframe(iframeElement, iframeContents);
-              return iframeContents.find(&#039;[nodes-placeholder]&#039;).droppable({
-                iframeFix: true,
-                iframe: iframeElement,
-                drop: function(event, ui) {
-                  return ondrop(this, event, ui);
-                }
-              });
+              self.iframeContents = $(this).contents();
+              return self.BindDroppable(self.iframeContents.find(&#039;[nodes-placeholder]&#039;));
             });
             return resolve();
           }, reject);
         });
       };
 
-      PageEditor.prototype.SetIframeSettings = function(iframeElement, iframeContents) {
-        this.iframeElement = iframeElement;
-        this.iframeContents = iframeContents;
-      };
-
       PageEditor.prototype.OnDropItem = function(target, event, ui) {
-        var content, droppedControl, ondrop;
-        console.log(&quot;ON DROP&quot;, ui.data.options.data);
+        var content, droppedControl;
         droppedControl = ui.data.options.data;
         content = $(droppedControl.model.get(&#039;Content&#039;));
         $(target).append(content);
         if (droppedControl.model.get(&#039;IsDroppable&#039;)) {
-          ondrop = this.OnDropItem;
-          return $(target).find(&#039;.control&#039;).droppable({
-            iframeFix: true,
-            iframe: this.iframeElement,
-            drop: function(event, ui) {
-              return ondrop(this, event, ui);
-            }
-          });
+          return this.BindDroppable($(target).find(&#039;.control&#039;));
         }
+      };
+
+      PageEditor.prototype.BindDroppable = function(target) {
+        var self;
+        self = this;
+        return $(target).droppable({
+          iframeFix: true,
+          greedy: true,
+          drop: function(event, ui) {
+            return self.OnDropItem(this, event, ui);
+          }
+        });
       };
 
       PageEditor.prototype.OnWindowResize = function() {
         var height, width;
-        console.log(&quot;PARENTSSS&quot;, this.parent);
         height = $(window).height() - $(this.parent.el).height() - 10;
         width = &quot;100%&quot;;
         this.framePageEditor.css(&quot;height&quot;, height);
