@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+    <script type='text/javascript' src='//code.jquery.com/jquery-2.0.2.js'></script>
+    <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <script type='text/javascript' src="../lib/jquery-ui/ui/jquery.ui.core.js"></script>
+    <script type='text/javascript' src="../lib/jquery-ui/ui/jquery.ui.widget.js"></script>
+    <script type='text/javascript' src="../lib/jquery-ui/ui/jquery.ui.mouse.js"></script>
+    <script type='text/javascript' src="../lib/jquery-ui/ui/jquery.ui.droppable.js"></script>
+    <script type='text/javascript' src="../lib/jquery-ui/ui/jquery.ui.draggable.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">    
+    <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <style type='text/css'>
+    .dragitem
+{
+    width: 25px;
+    height: 25px;
+    background-color: #000;
+    z-index: 1001;
+}
+  </style>
+  
+  <script>
+  
+$(document).ready(function() {
+    $(".dragitem").draggable(
+        {
+            containment: $('document'),
+              appendTo:  $("body"),
+              zIndex: 1001, 
+              helper: "clone",
+              iframeFix: true
+        }); 
+        
+  $('#divIframeView').append($("")); //doing this because jsfiddle seems to be disturbing iframe load events
+  $("#frames").load(function() { 
+      console.log("iframe loaded", this);
+      var iframe = $(this).contents();
+      iframe.find('.iframe_container').droppable({
+        iframeFix: true,
+        iframe: this, 
+        drop: function (event, ui){
+          console.log("ON DROP", iframe, event, ui, this);
+          alert($(this).attr('data-color'));
+        }
+      });
+    });
+});
+                  
+  </script>
+  
+</head>
+<body>
+	<div class='container'>
+    <div class='row'>
+        <div class='col-xs-3'>
+            <div class='dragitem'></div>    
+        </div>
+        <div id='divIframeView' class='col-xs-6'>
+            <iframe id='frames' src='./iframe.html' width='600' height='600'></iframe>
+        </div>
+    </div>
+</div>
+</body>
+</html>
